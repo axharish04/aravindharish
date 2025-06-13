@@ -1,19 +1,43 @@
-# 👋 About Me  
+# Hi there, I'm **Aravind Harish** 👋
 
-I am **Aravind Harish**, a **B.Tech student specializing in Artificial Intelligence and Data Science** at **Shiv Nadar University, Chennai**. I am passionate about **machine learning, deep learning, and data analytics**, focusing on AI-driven solutions for real-world applications.  
+**B.Tech in Artificial Intelligence & Data Science @ Shiv Nadar University, Chennai**
 
-### 🔹 Skills & Interests  
-- 🤖 **Machine Learning & Deep Learning** (TensorFlow, PyTorch, Scikit-learn)  
-- 🗣 **NLP & Speech Processing** (Speech Emotion Recognition, Sentiment Analysis)  
-- 🎮 **Reinforcement Learning** (Q-Learning, OpenAI Gym)  
-- 🌐 **Web Development** (React, Node.js)  
-- 📊 **Data Analytics & Visualization**  
+Passionate about building **AI‑driven solutions** that create real‑world impact.
 
-###  Projects  
-- **Speech Emotion Recognition** 🎙 (CNN, Bi-LSTM, RNN)  
-- **Sentiment Analysis & Text Processing**
-- **Q-Learning for Maze Solving**
-- **Pushup Counter Game
- 
+---
 
-💡 **Let’s connect and collaborate!** 🚀  
+## 🔧 Skills & Technologies
+
+* **Machine Learning & Deep Learning**: TensorFlow · PyTorch · Scikit‑learn
+* **NLP & Speech Processing**: NLTK · TextBlob · SpeechBrain
+* **Reinforcement Learning**: Q‑Learning · OpenAI Gym
+* **Data Analytics & Visualization**: Pandas · NumPy · Matplotlib · Seaborn
+* **Web Development**: React · Node.js
+
+---
+
+## 🌟 Highlight Projects
+
+| 🛠️ | Project                                  | Description                                                                                            |
+| :-: | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 🎙️ | **Speech Emotion Recognition**           | CNN + Bi‑LSTM/RNN pipeline that classifies 8 emotions from audio samples                               |
+|  💬 | **Sentiment Analysis & Text Processing** | End‑to‑end NLP workflow: cleaning, sentiment scoring & readability metrics                             |
+|  🚀 | **Q‑Learning Maze Solver**               | Reinforcement agent that navigates randomly generated mazes with adaptive exploration & learning rates |
+| 🏋️ | **Push‑Up Counter Game**                 | Real‑time pose detection app that counts reps and gives feedback on form                               |
+
+> 💡 *Detailed write‑ups and code for each project are in their respective repositories.*
+
+---
+
+
+
+## 📫 Get in Touch
+
+* ✉️ **Email**: [aruharish08@gmail.com](mailto:aruharish08@gmail.com)
+* 🔗 **LinkedIn**: [linkedin.com/in/aravindharish9](https://linkedin.com/in/aravindharish9)
+* 🌐 **Portfolio**: [aravindharish.dev](https://aravindharish.dev)
+
+---
+
+
+Thanks for visiting! ⭐ Feel free to **fork**, **star**, or **open an issue/PR** on any of my projects.
