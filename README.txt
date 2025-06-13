@@ -1,43 +1,48 @@
-# Hi there, I'm **Aravind Harish** 👋
 
-**B.Tech in Artificial Intelligence & Data Science @ Shiv Nadar University, Chennai**
+Hi there, I'm Aravind Harish 👋
+B.Tech in Artificial Intelligence & Data Science
+Shiv Nadar University, Chennai
 
-Passionate about building **AI‑driven solutions** that create real‑world impact.
+Passionate about building AI-driven solutions that create real-world impact.
 
----
+SKILLS & TECHNOLOGIES
 
-## 🔧 Skills & Technologies
+Machine Learning & Deep Learning: TensorFlow, PyTorch, Scikit-learn
 
-* **Machine Learning & Deep Learning**: TensorFlow · PyTorch · Scikit‑learn
-* **NLP & Speech Processing**: NLTK · TextBlob · SpeechBrain
-* **Reinforcement Learning**: Q‑Learning · OpenAI Gym
-* **Data Analytics & Visualization**: Pandas · NumPy · Matplotlib · Seaborn
-* **Web Development**: React · Node.js
+NLP & Speech Processing: NLTK, TextBlob, SpeechBrain
 
----
+Reinforcement Learning: Q-Learning, OpenAI Gym
 
-## 🌟 Highlight Projects
+Data Analytics & Visualization: Pandas, NumPy, Matplotlib, Seaborn
 
-| 🛠️ | Project                                  | Description                                                                                            |
-| :-: | ---------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| 🎙️ | **Speech Emotion Recognition**           | CNN + Bi‑LSTM/RNN pipeline that classifies 8 emotions from audio samples                               |
-|  💬 | **Sentiment Analysis & Text Processing** | End‑to‑end NLP workflow: cleaning, sentiment scoring & readability metrics                             |
-|  🚀 | **Q‑Learning Maze Solver**               | Reinforcement agent that navigates randomly generated mazes with adaptive exploration & learning rates |
-| 🏋️ | **Push‑Up Counter Game**                 | Real‑time pose detection app that counts reps and gives feedback on form                               |
+Web Development: React, Node.js
 
-> 💡 *Detailed write‑ups and code for each project are in their respective repositories.*
+HIGHLIGHT PROJECTS
 
----
+Speech Emotion Recognition
 
+CNN + Bi-LSTM/RNN pipeline that classifies 8 emotions from audio samples
 
+Sentiment Analysis & Text Processing
 
-## 📫 Get in Touch
+End-to-end NLP workflow: text cleaning, sentiment scoring, readability metrics
 
-* ✉️ **Email**: [aruharish08@gmail.com](mailto:aruharish08@gmail.com)
-* 🔗 **LinkedIn**: [linkedin.com/in/aravindharish9](https://linkedin.com/in/aravindharish9)
-* 🌐 **Portfolio**: [aravindharish.dev](https://aravindharish.dev)
+Q-Learning Maze Solver
 
----
+Reinforcement agent that navigates randomly generated mazes
+with adaptive exploration and learning rates
 
+Push-Up Counter Game
 
-Thanks for visiting! ⭐ Feel free to **fork**, **star**, or **open an issue/PR** on any of my projects.
+Real-time pose detection app that counts reps and gives feedback on form
+
+(Detailed write-ups and code are available in each project's repository.)
+
+GET IN TOUCH
+
+Email : aruharish08@gmail.com
+LinkedIn : https://linkedin.com/in/aravindharish9
+Portfolio : https://aravindharish.dev
+
+Thanks for visiting! Feel free to fork, star, or open an issue/PR on any of my projects.
+
