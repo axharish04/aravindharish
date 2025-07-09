@@ -1,164 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aravind Harish - Portfolio</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        /* ...styles omitted for brevity, unchanged from before... */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aravind Harish - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0c0c0c;
+      color: #f4f4f4;
+    }
+    .header {
+      background: rgba(12, 12, 12, 0.95);
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00d4ff;
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      color: #f4f4f4;
+      text-decoration: none;
+      font-size: 1.07rem;
+      transition: color 0.2s;
+    }
+    .nav-links li a:hover {
+      color: #00d4ff;
+    }
+    .social-icons a {
+      color: #00d4ff;
+      margin-left: 1rem;
+      font-size: 1.25rem;
+      transition: color 0.2s;
+    }
+    .social-icons a:hover {
+      color: #fff;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1rem 2rem 1rem;
+      background: linear-gradient(160deg, #0c0c0c 60%, #00d4ff18);
+      text-align: center;
+    }
+    .profile-image img {
+      width: 155px;
+      height: 155px;
+      border-radius: 50%;
+      border: 4px solid #00d4ff;
+      object-fit: cover;
+      background: #252525;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 6px 32px #00d4ff33;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0.3rem 0 0.7rem 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #00d4ff;
+    }
+    .hero p {
+      font-size: 1.13rem;
+      color: #e7e7e7;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 1.8rem auto;
+    }
+    .cta-button {
+      background: #00d4ff;
+      color: #0c0c0c;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      padding: 0.7rem 2.2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 24px #00d4ff22;
+    }
+    .cta-button:hover {
+      background: #0c0c0c;
+      color: #00d4ff;
+      border: 1px solid #00d4ff;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: #00d4ff;
+      margin-bottom: 2rem;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .projects {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 3rem 1rem;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 2.3rem;
+    }
+    .project-card {
+      background: #161616;
+      border-radius: 16px;
+      box-shadow: 0 4px 28px #00d4ff12;
+      padding: 1.3rem 1.1rem 1.2rem 1.1rem;
+      transition: transform 0.17s;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 430px;
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.025);
+      box-shadow: 0 8px 42px #00d4ff31;
+    }
+    .featured-badge {
+      position: absolute;
+      left: 1.2rem;
+      top: 1.2rem;
+      background: #00d4ffcc;
+      color: #0c0c0c;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 7px;
+      padding: 2.5px 13px;
+      letter-spacing: 0.5px;
+      z-index: 1;
+      box-shadow: 0 2px 10px #00d4ff33;
+    }
+    .project-image {
+      width: 100%;
+      max-width: 240px;
+      height: 140px;
+      overflow: hidden;
+      border-radius: 11px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 14px #00d4ff18;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #222;
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .placeholder-image {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      color: #00d4ff44;
+    }
+    .project-title {
+      font-size: 1.27rem;
+      color: #00d4ff;
+      font-weight: 600;
+      text-align: center;
+      margin: 0.5rem 0 0.2rem 0;
+    }
+    .project-description {
+      font-size: 1rem;
+      color: #dbeafc;
+      text-align: center;
+      margin-bottom: 1.3rem;
+      flex-grow: 1;
+    }
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #00d4ff;
+      color: #0c0c0c;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 7px 18px;
+      border-radius: 20px;
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    .project-link:hover {
+      background: #0c0c0c;
+      color: #00d4ff;
+      border: 1px solid #00d4ff;
+    }
+    .contact {
+      background: #161616;
+      padding: 3rem 1rem 2.5rem 1rem;
+      text-align: center;
+    }
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2.2rem;
+    }
+    .contact-item i {
+      font-size: 2rem;
+      color: #00d4ff;
+      margin-bottom: 0.6rem;
+    }
+    .contact-item h3 {
+      margin: 0.2rem 0 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #00d4ff;
+    }
+    .contact-item p,
+    .contact-item a {
+      font-size: 1rem;
+      color: #e7e7e7;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+      color: #00d4ff;
+    }
+    .footer {
+      background: #0c0c0c;
+      color: #777;
+      padding: 1.1rem 0;
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 0;
+      border-top: 1px solid #222;
+    }
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 0.7rem;
+        padding: 0 1rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="nav-container">
-            <a href="#" class="logo">Aravind Harish</a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/aravindharish9" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/axharish04" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">Aravind Harish</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/aravindharish9" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/axharish04" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </header>
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="profile-image">
+        <img src="images/prof%20pic%202.jpg" alt="Aravind Harish Profile Picture">
+      </div>
+      <h1>ARAVIND HARISH</h1>
+      <p>B.Tech CSE undergraduate specializing in Artificial Intelligence and Data Science at Shiv Nadar University, Chennai. Passionate about software development with a focus on data analytics and machine learning.</p>
+      <a href="#projects" class="cta-button">View My Work</a>
+    </div>
+  </section>
+  <section id="projects" class="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card featured-project">
+        <div class="featured-badge">Featured</div>
+        <div class="project-image">
+          <img src="images/Dashboard.jpg" alt="Dashboard Project">
         </div>
-    </header>
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="images/prof%20pic%202.jpg" alt="Aravind Harish Profile Picture">
-            </div>
-            <h1>ARAVIND HARISH</h1>
-            <p>B.Tech CSE undergraduate specializing in Artificial Intelligence and Data Science at Shiv Nadar University, Chennai. Passionate about software development with a focus on data analytics and machine learning.</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+        <h3 class="project-title">Fitfreak Exercise Tracker</h3>
+        <p class="project-description">Full-featured exercise tracker built with Python, utilizing computer vision for real-time exercise detection and analytics.</p>
+        <a href="https://github.com/axharish04/Fitfreak-Exercise-Tracker" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/Pushup proj pic.png" alt="Pushup Project" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-dumbbell\'></i></div>';">
         </div>
-    </section>
-    <section id="projects" class="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card featured-project">
-                <div class="featured-badge">Featured</div>
-                <div class="project-image">
-                    <img src="images/Dashboard.jpg" alt="Dashboard Project">
-                </div>
-                <h3 class="project-title">Fitfreak Exercise Tracker</h3>
-                <p class="project-description">Full-featured exercise tracker built with Python, utilizing computer vision for real-time exercise detection and analytics.</p>
-                <a href="https://github.com/axharish04/Fitfreak-Exercise-Tracker" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                   <img src="images/Pushup proj pic.png" alt="Pushup Project" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-dumbbell\'></i></div>';">
-                </div>
-                <h3 class="project-title">Pushup Counter Game</h3>
-                <p class="project-description">Advanced computer vision system using OpenCV for real-time pushup detection and leaderboard. Built with a Tkinter GUI.</p>
-                <a href="https://github.com/axharish04/Pushup_Counter" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/axharish04/Article-web-scraping/main/assets/scrape.jpg" alt="Article Web Scraping Demo" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-newspaper\'></i></div>';">
-                </div>
-                <h3 class="project-title">Article Web Scraping</h3>
-                <p class="project-description">Uses Beautiful Soup to extract text from multiple articles and perform sentiment analysis.</p>
-                <a href="https://github.com/axharish04/Article-web-scraping" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/axharish04/Random-Maze-navigation---Q-learning/main/assets/maze-demo.gif" alt="Q-Learning Maze Demo" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-puzzle-piece\'></i></div>';">
-                </div>
-                <h3 class="project-title">Q-Learning Maze Navigation</h3>
-                <p class="project-description">Intelligent agent trained through reinforcement learning to navigate complex mazes.</p>
-                <a href="https://github.com/axharish04/Random-Maze-navigation---Q-learning" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/reddit.jpg" alt="Reddit Project">
-                </div>
-                <h3 class="project-title">Subreddit Predictor</h3>
-                <p class="project-description">Predicts the subreddit of a post using machine learning models. Built in Jupyter Notebook.</p>
-                <a href="https://github.com/axharish04/Subreddit-Predictor" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/sound.jpg" alt="Speech Emotion Recognition Project">
-                </div>
-                <h3 class="project-title">Speech Emotion Recognition</h3>
-                <p class="project-description">Deep learning system for emotion classification from speech audio, with comparative analysis of neural architectures.</p>
-                <a href="https://github.com/axharish04/Speech-Emotion-Recognition" target="_blank" class="project-link">
-                    <span>View Project</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
+        <h3 class="project-title">Pushup Counter Game</h3>
+        <p class="project-description">Advanced computer vision system using OpenCV for real-time pushup detection and leaderboard. Built with a Tkinter GUI.</p>
+        <a href="https://github.com/axharish04/Pushup_Counter" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://raw.githubusercontent.com/axharish04/Article-web-scraping/main/assets/scrape.jpg" alt="Article Web Scraping Demo" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-newspaper\'></i></div>';">
         </div>
-    </section>
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Location</h3>
-                <p>Chennai, Tamil Nadu<br>India</p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <a href="tel:+918208902329">+91 8208902329</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <a href="mailto:aruharish08@gmail.com">aruharish08@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-share-alt"></i>
-                <h3>Social</h3>
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-                    <a href="https://www.linkedin.com/in/aravindharish9" target="_blank" style="color: #00d4ff;"><i class="fab fa-linkedin fa-lg"></i></a>
-                    <a href="https://github.com/axharish04" target="_blank" style="color: #00d4ff;"><i class="fab fa-github fa-lg"></i></a>
-                </div>
-            </div>
+        <h3 class="project-title">Article Web Scraping</h3>
+        <p class="project-description">Uses Beautiful Soup to extract text from multiple articles and perform sentiment analysis.</p>
+        <a href="https://github.com/axharish04/Article-web-scraping" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="https://raw.githubusercontent.com/axharish04/Random-Maze-navigation---Q-learning/main/assets/maze-demo.gif" alt="Q-Learning Maze Demo" onerror="this.parentNode.innerHTML='<div class=\'placeholder-image\'><i class=\'fas fa-puzzle-piece\'></i></div>';">
         </div>
-    </section>
-    <footer class="footer">
-        <p>&copy; 2025 Aravind Harish. All rights reserved.</p>
-    </footer>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(12, 12, 12, 0.98)';
-            } else {
-                header.style.background = 'rgba(12, 12, 12, 0.95)';
-            }
-        });
-    </script>
+        <h3 class="project-title">Q-Learning Maze Navigation</h3>
+        <p class="project-description">Intelligent agent trained through reinforcement learning to navigate complex mazes.</p>
+        <a href="https://github.com/axharish04/Random-Maze-navigation---Q-learning" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/reddit.jpg" alt="Reddit Project">
+        </div>
+        <h3 class="project-title">Subreddit Predictor</h3>
+        <p class="project-description">Predicts the subreddit of a post using machine learning models. Built in Jupyter Notebook.</p>
+        <a href="https://github.com/axharish04/Subreddit-Predictor" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/sound.jpg" alt="Speech Emotion Recognition Project">
+        </div>
+        <h3 class="project-title">Speech Emotion Recognition</h3>
+        <p class="project-description">Deep learning system for emotion classification from speech audio, with comparative analysis of neural architectures.</p>
+        <a href="https://github.com/axharish04/Speech-Emotion-Recognition" target="_blank" class="project-link">
+          <span>View Project</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Chennai, Tamil Nadu<br>India</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <a href="tel:+918208902329">+91 8208902329</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:aruharish08@gmail.com">aruharish08@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-share-alt"></i>
+        <h3>Social</h3>
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+          <a href="https://www.linkedin.com/in/aravindharish9" target="_blank" style="color: #00d4ff;"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://github.com/axharish04" target="_blank" style="color: #00d4ff;"><i class="fab fa-github fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>&copy; 2025 Aravind Harish. All rights reserved.</p>
+  </footer>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 100) {
+        header.style.background = 'rgba(12, 12, 12, 0.98)';
+      } else {
+        header.style.background = 'rgba(12, 12, 12, 0.95)';
+      }
+    });
+  </script>
 </body>
 </html>
