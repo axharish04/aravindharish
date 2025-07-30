@@ -42,7 +42,7 @@ GET IN TOUCH
 
 Email : aruharish08@gmail.com
 LinkedIn : https://linkedin.com/in/aravindharish9
-Portfolio : https://aravindharish.dev
+Portfolio : https://axharish04.github.io/aravindharish/
 
 Thanks for visiting! Feel free to fork, star, or open an issue/PR on any of my projects.
 
